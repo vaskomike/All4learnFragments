@@ -46,10 +46,12 @@ public class DrawerActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.notesVector: {
                     navigator.showNotes();
+                    closeContextMenu();
                     break;
                 }
                 case R.id.concentrateVector: {
                     navigator.showConcentration();
+                    closeContextMenu();
                     break;
                 }
             }
