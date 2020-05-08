@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".drawer.DrawerActivity" />
+        <activity android:name=".notes.base.EditNoteActivity" />
     </application>
 
 </manifest>
