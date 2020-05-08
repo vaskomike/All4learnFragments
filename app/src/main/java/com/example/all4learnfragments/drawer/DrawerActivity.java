@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -46,12 +47,14 @@ public class DrawerActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.notesVector: {
                     navigator.showNotes();
-                    closeContextMenu();
+                    ActionBar ac = getSupportActionBar();
+                    ac.setTitle(R.string.mode_notes);
                     break;
                 }
                 case R.id.concentrateVector: {
                     navigator.showConcentration();
-                    closeContextMenu();
+                    ActionBar ac = getSupportActionBar();
+                    ac.setTitle(R.string.mode_concentration);
                     break;
                 }
             }
@@ -59,6 +62,8 @@ public class DrawerActivity extends AppCompatActivity {
         });
 
         if (savedInstanceState == null) navigator.showNotes();
+        ActionBar ac = getSupportActionBar();
+        ac.setTitle(R.string.mode_notes);
     }
 
 }

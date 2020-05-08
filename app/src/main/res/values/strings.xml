@@ -8,5 +8,6 @@
     <string name="drawer_close_menu">Close menu</string>
     <string name="modes">Modes</string>
     <string name="theme">Theme</string>
-
+    <string name="mode_notes">Notes</string>
+    <string name="mode_concentration">Time management</string>
 </resources>
