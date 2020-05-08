@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="@string/modes">
+        <menu>
+    <item
+        android:id="@+id/notesVector"
+        android:icon="@drawable/note_fragment"
+        android:title="@string/menuNotes" />
+
+    <item
+        android:id="@+id/concentrateVector"
+        android:icon="@drawable/concentration"
+        android:title="@string/menuConcentration" />
+        </menu>
+    </item>
+
+    <item android:title="@string/theme">
+        <menu>
+            <item
+                android:id="@+id/theme"
+                android:title="@string/theme"
+                app:actionViewClass="android.widget.Switch"
+                app:showAsAction="always" />
+        </menu>
+    </item>
+
+</menu>

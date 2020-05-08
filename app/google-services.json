@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "170724249843",
+    "firebase_url": "https://all4learnapp.firebaseio.com",
+    "project_id": "all4learnapp",
+    "storage_bucket": "all4learnapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170724249843:android:cb01929e19281340256786",
+        "android_client_info": {
+          "package_name": "com.example.all4learnfragments"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "170724249843-gedkmvfnp8nio1dojbk4mm3regqivh24.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.all4learnfragments",
+            "certificate_hash": "cca870e2c89a57022761729591aafec75b085a35"
+          }
+        },
+        {
+          "client_id": "170724249843-bnm1iu63348idot6n2d5s4ng5jpaqatl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoDyNo8f_cG6zFUgvPIn6PDBntaaQUzCE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "170724249843-bnm1iu63348idot6n2d5s4ng5jpaqatl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

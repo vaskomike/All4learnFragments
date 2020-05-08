@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">All4learnFragments</string>
+    <string name="DefaultNote">Note</string>
+    <string name="DefaultTitle">Title</string>
+    <string name="menuNotes">Notes</string>
+    <string name="menuConcentration">Time management</string>
+    <string name="drawer_open_menu">Open menu</string>
+    <string name="drawer_close_menu">Close menu</string>
+    <string name="modes">Modes</string>
+    <string name="theme">Theme</string>
+
+</resources>
