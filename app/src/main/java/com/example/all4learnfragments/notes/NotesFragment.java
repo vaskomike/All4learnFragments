@@ -1,6 +1,7 @@
 package com.example.all4learnfragments.notes;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,11 +16,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.all4learnfragments.R;
+import com.example.all4learnfragments.notes.base.ActivityAddNote;
 import com.example.all4learnfragments.notes.base.DeleteNote;
 import com.example.all4learnfragments.notes.base.EditNoteActivity;
 import com.example.all4learnfragments.notes.base.NotesAdapter;
 import com.example.all4learnfragments.notes.base.NotesPresenter;
 import com.example.all4learnfragments.notes.utils.OnItemClickListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -52,6 +55,15 @@ public class NotesFragment extends Fragment implements NotesPresenter.Listener, 
         new ItemTouchHelper(callback).attachToRecyclerView(recyclerView);
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
+
+        FloatingActionButton addNote = (FloatingActionButton) view.findViewById(R.id.addNote);
+        addNote.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ActivityAddNote.class);
+        });
+        view.findViewById(R.id.addNote).setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ActivityAddNote.class);
+            startActivity(intent);
+        });
     }
 
     ItemTouchHelper.SimpleCallback callback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT | ItemTouchHelper.LEFT) {
@@ -77,5 +89,7 @@ public class NotesFragment extends Fragment implements NotesPresenter.Listener, 
         startActivity(EditNoteActivity.createIntent(getActivity(), item));
 
     }
+
 }
+
 

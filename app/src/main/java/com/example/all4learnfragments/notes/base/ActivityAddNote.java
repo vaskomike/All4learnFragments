@@ -21,7 +21,6 @@ import java.util.Calendar;
 
 public class ActivityAddNote extends AppCompatActivity {
 
-
     private FirebaseFirestore fireStore = FirebaseFirestore.getInstance();
 
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
