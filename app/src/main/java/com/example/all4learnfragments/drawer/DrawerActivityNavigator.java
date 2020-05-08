@@ -21,7 +21,9 @@ public class DrawerActivityNavigator  {
 
     public void showConcentration() {
         replaceRoot(new ConcentrationFragment());
+
     }
+
 
     private void replaceRoot(Fragment fragment) {
         manager.beginTransaction()

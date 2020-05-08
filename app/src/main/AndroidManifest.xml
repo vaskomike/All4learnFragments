@@ -9,16 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyAppTheme">
-        <activity android:name=".ui.SplashAuth">
+        <activity
+            android:name=".ui.SplashAuth"
+            android:configChanges="uiMode">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".drawer.DrawerActivity" />
-        <activity android:name=".notes.base.EditNoteActivity" />
-        <activity android:name=".notes.base.ActivityAddNote" />
+        <activity
+            android:name=".drawer.DrawerActivity"
+            android:configChanges="uiMode" />
+        <activity
+            android:name=".notes.base.EditNoteActivity"
+            android:configChanges="uiMode" />
+        <activity
+            android:name=".notes.base.ActivityAddNote"
+            android:configChanges="uiMode" />
 
     </application>
 
