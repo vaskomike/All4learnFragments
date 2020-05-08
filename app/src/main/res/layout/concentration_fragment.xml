@@ -66,7 +66,7 @@
         android:width="200dp"
         android:height="40dp"
         android:background="@drawable/button_start"
-        android:text="Start"
+        android:text="@string/concentration_button_name_start"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="25sp"
@@ -87,9 +87,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Minutes"
+        android:text="@string/concentration_text_view_title_minutes"
         android:textColor="@android:color/holo_orange_dark"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/picker_minutes"
         app:layout_constraintStart_toEndOf="@+id/textView" />
 
@@ -98,9 +98,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Hours  "
+        android:text="@string/concentration_text_view_title_hours"
         android:textColor="@android:color/holo_orange_dark"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/picker_hours"
         app:layout_constraintStart_toStartOf="parent" />
 

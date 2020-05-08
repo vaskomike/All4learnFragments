@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="DefaultNote">Заметка</string>
+    <string name="DefaultTitle">Заглавие</string>
+
+    <string name="menuNotes">Заметки</string>
+    <string name="menuConcentration">Тайм-менеджмент</string>
+    <string name="drawer_open_menu">Открыть меню</string>
+    <string name="drawer_close_menu">Закрыть меню</string>
+    <string name="modes">Режимы</string>
+    <string name="theme">Темы</string>
+    <string name="mode_notes">Заметки</string>
+    <string name="mode_concentration">Тайм-менеджмент</string>
+
+    <string name="notes_last_viewed_date">Последний просмотр:</string>
+
+    <string name="concentration_button_name_start">Начать</string>
+    <string name="concentration_button_name_stop">Остановить</string>
+    <string name="concentration_text_view_title_hours">Часы   " "</string>
+    <string name="concentration_text_view_title_minutes">Минуты</string>
+    <string name="concentration_time_is_up">Время вышло!</string>
+    <string name="concentration_time_is_not_chosen">Время таймера не указано!</string>
+    <string name="concentration_motivation">Твоё будущее важнее телефона!</string>
+    <string name="concentration_motivation_2">Просто сделай это!</string>
+    <string name="concentration_motivation_3">Почему я должен мотивировать тебя?</string>
+    <string name="concentration_motivation_4">Закончи то, что начал!</string>
+</resources>
