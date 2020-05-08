@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="monospace"
+            android:hint="@string/DefaultTitle"
+
+            android:paddingStart="6sp"
+            android:paddingEnd="6sp"
+            android:textSize="24sp"
+            app:counterEnabled="true"
+            app:counterMaxLength="5"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@android:color/transparent"
+            android:gravity="top"
+            android:hint="@string/DefaultNote"
+            android:inputType="textMultiLine"
+            android:paddingStart="6sp"
+            android:paddingEnd="6sp"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/staticString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="end"
+
+        android:textSize="16sp"
+        android:text="Last viewed:"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/dateNote"
+        android:layout_width="120dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="end"
+        android:padding="12dp"
+        android:textSize="16sp" />
+
+</LinearLayout>

@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.all4learnfragments.R;
 import com.example.all4learnfragments.drawer.DrawerActivity;
-import com.example.all4learnfragments.utils.Schedulers;
+import com.example.all4learnfragments.notes.utils.Schedulers;
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
 
