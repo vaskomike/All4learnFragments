@@ -1,7 +1,11 @@
 <resources>
-    <string name="app_name">All4learnFragments</string>
+    <string name="app_name" translatable="false">All4learn</string>
+
     <string name="DefaultNote">Note</string>
     <string name="DefaultTitle">Title</string>
+
+    <string name="no_time_is_left" translatable="false">0:00</string>
+
     <string name="menuNotes">Notes</string>
     <string name="menuConcentration">Time management</string>
     <string name="drawer_open_menu">Open menu</string>
@@ -10,7 +14,23 @@
     <string name="theme">Theme</string>
     <string name="mode_notes">Notes</string>
     <string name="mode_concentration">Time management</string>
+
+
+    <string name="notes_last_viewed_date">Last viewed:</string>
+
+    <string name="concentration_button_name_start">Start</string>
+    <string name="concentration_button_name_stop">Stop</string>
+    <string name="concentration_text_view_title_hours">Hours   " "</string>
+    <string name="concentration_text_view_title_minutes">Minutes</string>
+    <string name="concentration_time_is_up">Time is up!</string>
+    <string name="concentration_time_is_not_chosen">Choose time</string>
+    <string name="concentration_motivation">Your future more valuable than this phone!</string>
+    <string name="concentration_motivation_2">Just do it!</string>
+    <string name="concentration_motivation_3">Why should I motivate you?</string>
+    <string name="concentration_motivation_4">Finish it!</string>
     <string name="timer_stop">Stop</string>
     <string name="timer_start">Start</string>
     <string name="timer_end">Time\'s up</string>
+ master
 </resources>
+

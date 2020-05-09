@@ -4,20 +4,28 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.view.Gravity;
+
+import android.widget.Switch;
+import android.widget.Toast;
+
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.all4learnfragments.R;
+import com.example.all4learnfragments.concentration.ConcentrationFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class DrawerActivity extends AppCompatActivity {
     private DrawerActivityNavigator navigator = new DrawerActivityNavigator(getSupportFragmentManager());
+
+
+    private Switch mySwitch;
 
     public static Intent createIntent(Context context) {
         return new Intent(context, DrawerActivity.class);
@@ -33,6 +41,8 @@ public class DrawerActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        mySwitch = findViewById(R.id.theme);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,
@@ -62,17 +72,11 @@ public class DrawerActivity extends AppCompatActivity {
                     ac.setTitle(R.string.mode_concentration);
                     break;
                 }
-//                case R.id.theme:{
-//                    int currentNightMode = .uiMode & Configuration.UI_MODE_NIGHT_MASK;
-//                    switch (currentNightMode) {
-//                        case Configuration.UI_MODE_NIGHT_NO:
-//                            // Night mode is not active, we're using the light theme
-//                            break;
-//                        case Configuration.UI_MODE_NIGHT_YES:
-//                            // Night mode is active, we're using dark theme
-//                            break;
-//                    }
-//                }
+                case R.id.theme:{
+                    Toast.makeText( this, "switched!", Toast.LENGTH_SHORT).show();
+//                    AppCompatDelegate.setDefaultNightMode(
+//                            AppCompatDelegate.MODE_NIGHT_YES);
+                }
 
             }
             return false;
