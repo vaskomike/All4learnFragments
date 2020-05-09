@@ -25,4 +25,7 @@
     <string name="concentration_motivation_2">Просто сделай это!</string>
     <string name="concentration_motivation_3">Почему я должен мотивировать тебя?</string>
     <string name="concentration_motivation_4">Закончи то, что начал!</string>
+    <string name="timer_stop">Остановить</string>
+    <string name="timer_start">Начать</string>
+    <string name="timer_end">Время вышло!</string>
 </resources>
