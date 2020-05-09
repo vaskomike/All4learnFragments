@@ -102,10 +102,6 @@ public class ConcentrationFragment extends Fragment {
 
 
     public void startTimer() {
-        handler = new Handler();
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
                 int hours = numberPickerHours.getValue();
                 int minutes = numberPickerMinutes.getValue();
                 maxTime = hours * 60 * 60 * 1000 + minutes * 60 * 1000;
@@ -132,9 +128,7 @@ public class ConcentrationFragment extends Fragment {
                 start.setText(R.string.timer_stop);
                 reset.setVisibility(View.INVISIBLE);
             }
-        };
-        handler.post(runnable);
-    }
+
 
     public void stopTimer() {
 
