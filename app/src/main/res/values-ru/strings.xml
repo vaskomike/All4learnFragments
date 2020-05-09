@@ -28,5 +28,6 @@
     <string name="timer_stop">Остановить</string>
     <string name="timer_start">Начать</string>
     <string name="timer_end">Время вышло!</string>
+    <string name="enter_time">Введите время, пожалуйста</string>
 
 </resources>
