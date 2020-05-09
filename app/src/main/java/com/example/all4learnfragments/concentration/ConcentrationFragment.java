@@ -1,6 +1,7 @@
 package com.example.all4learnfragments.concentration;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -22,6 +23,9 @@ import com.example.all4learnfragments.R;
 
 import java.util.ArrayList;
 import java.util.Locale;
+
+import static android.content.Context.MODE_PRIVATE;
+import static android.drm.DrmStore.Playback.START;
 
 public class ConcentrationFragment extends Fragment {
 
@@ -67,6 +71,7 @@ public class ConcentrationFragment extends Fragment {
         progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         reset = (ImageButton) view.findViewById(R.id.reset);
         timerIsRunning = false;
+
 
         numberPickerHours.setMinValue(0);
         numberPickerHours.setMaxValue(7);
@@ -149,16 +154,64 @@ public class ConcentrationFragment extends Fragment {
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putLong("millisLeft", secondsToEnd);
+        outState.putBoolean("isRunning", timerIsRunning);
+    }
+
+    public void updateButtons() {
+        if (timerIsRunning) {
+            reset.setVisibility(View.INVISIBLE);
+            start.setText(R.string.timer_pause);
+        } else {
+            start.setText(R.string.timer_start);
+            if (secondsToEnd < 100) {
+                start.setVisibility(View.INVISIBLE);
+            } else start.setVisibility(View.VISIBLE);
+        }
+
+    }
+
+    @Override
+    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+        secondsToEnd = savedInstanceState.getLong("millisLeft");
+        timerIsRunning = savedInstanceState.getBoolean("isRunning");
+        updateTextTime();
+        updateButtons();
     }
 
     private void makeText() {
-        ArrayList<Integer> quotes = new ArrayList<Integer>();
+        ArrayList<Integer> quotes = new ArrayList<>();
         quotes.add(R.string.concentration_motivation);
         quotes.add(R.string.concentration_motivation_2);
         quotes.add(R.string.concentration_motivation_3);
         quotes.add(R.string.concentration_motivation_4);
         motivate.setText(quotes.get((int) (Math.random() * 4)));
     }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("isRunning", timerIsRunning);
+        editor.putLong("millisLeft", secondsToEnd);
+        editor.putInt("maxTime", maxTime);
+
+
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("prefs", MODE_PRIVATE);
+        secondsToEnd = sharedPreferences.getLong("millisLeft", 0);
+        maxTime = sharedPreferences.getInt("maxTime", 0);
+        timerIsRunning = sharedPreferences.getBoolean("isRunning", false);
+        updateTextTime();
+        updateButtons();
+    }
+
+
 }
 
 
