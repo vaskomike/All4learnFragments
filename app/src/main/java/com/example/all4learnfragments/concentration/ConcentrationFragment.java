@@ -145,11 +145,6 @@ public class ConcentrationFragment extends Fragment {
         timeLeft.setText(left);
     }
 
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putLong("millisLeft", secondsToEnd);
-    }
 
     private void makeText() {
         ArrayList<Integer> quotes = new ArrayList<Integer>();
