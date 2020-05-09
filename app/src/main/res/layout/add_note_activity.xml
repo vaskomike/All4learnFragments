@@ -67,6 +67,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
+        android:paddingLeft="24dp"
+        android:paddingTop="18dp"
         android:layout_marginEnd="16dp"
         android:text="@string/notes_last_viewed_date"
         android:textColor="?attr/text_color"
@@ -74,7 +76,7 @@
 
     <TextView
         android:id="@+id/dateNote"
-        android:layout_width="120dp"
+        android:layout_width="110dp"
         android:layout_height="0dp"
         android:layout_gravity="end"
         android:layout_weight="1"
