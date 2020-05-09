@@ -45,6 +45,8 @@ public class ConcentrationFragment extends Fragment {
 
     private int maxTime;
 
+    private Handler handler;
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -100,37 +102,47 @@ public class ConcentrationFragment extends Fragment {
 
 
     public void startTimer() {
-        int hours = numberPickerHours.getValue();
-        int minutes = numberPickerMinutes.getValue();
-        maxTime = hours * 60 * 60 * 1000 + minutes * 60 * 1000;
-        progressBar.setMax(maxTime);
-        countDownTimer = new CountDownTimer(maxTime, 100) {
+        handler = new Handler();
+        Runnable runnable = new Runnable() {
             @Override
-            public void onTick(long millisUntilFinished) {
-                secondsToEnd = millisUntilFinished / 1000;
-                updateTextTime();
-                progressBar.setProgress((int) (millisUntilFinished));
-            }
+            public void run() {
+                int hours = numberPickerHours.getValue();
+                int minutes = numberPickerMinutes.getValue();
+                maxTime = hours * 60 * 60 * 1000 + minutes * 60 * 1000;
+                progressBar.setMax(maxTime);
+                if (maxTime != 0) {
+                    countDownTimer = new CountDownTimer(maxTime, 100) {
+                        @Override
+                        public void onTick(long millisUntilFinished) {
+                            secondsToEnd = millisUntilFinished / 1000;
+                            updateTextTime();
+                            progressBar.setProgress((int) (millisUntilFinished));
+                        }
 
-            @Override
-            public void onFinish() {
-                timerIsRunning = false;
-                start.setText(R.string.timer_start);
-                timeLeft.setText(R.string.timer_end);
+                        @Override
+                        public void onFinish() {
+                            timerIsRunning = false;
+                            start.setText(R.string.timer_start);
+                            timeLeft.setText(R.string.timer_end);
+                        }
+                    }.start();
+                } else
+                    Toast.makeText(getActivity(), R.string.enter_time, Toast.LENGTH_SHORT).show();
+                timerIsRunning = true;
+                start.setText(R.string.timer_stop);
+                reset.setVisibility(View.INVISIBLE);
             }
-        }.start();
-        timerIsRunning = true;
-        start.setText(R.string.timer_stop);
-        reset.setVisibility(View.INVISIBLE);
-
+        };
+        handler.post(runnable);
     }
 
     public void stopTimer() {
+
         countDownTimer.cancel();
         timerIsRunning = false;
         start.setText(R.string.timer_start);
         reset.setVisibility(View.VISIBLE);
-        progressBar.getProgress();
+        secondsToEnd = progressBar.getProgress();
 
     }
 
