@@ -9,8 +9,7 @@
     android:paddingTop="8dp"
     android:paddingEnd="8dp"
     android:paddingBottom="6dp"
-    android:id="@+id/noteItem"
-    android:backgroundTint="?attr/background_color">
+    android:id="@+id/noteItem">
 
     <TextView
         android:id="@+id/title"

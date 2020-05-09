@@ -1,6 +1,7 @@
 package com.example.all4learnfragments.concentration;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -79,9 +80,9 @@ public class ConcentrationFragment extends Fragment {
         numberPickerMinutes.setMinValue(0);
         numberPickerMinutes.setMaxValue(59);
 
-        numberPickerHours.setBackgroundColor(R.attr.backgroundColor);
-        numberPickerMinutes.setBackgroundColor(R.attr.backgroundColor);
+
         timeLeft.setText("0:00");
+
 
         makeText();
 
@@ -194,7 +195,9 @@ public class ConcentrationFragment extends Fragment {
         quotes.add(R.string.concentration_motivation_7);
         quotes.add(R.string.concentration_motivation_6);
         quotes.add(R.string.concentration_motivation_5);
+
         motivate.setText(quotes.get((int) (Math.random() * 7)));
+
     }
 }
 

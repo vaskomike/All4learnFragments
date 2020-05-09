@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.all4learnfragments.R;
+import com.example.all4learnfragments.drawer.SharedPref;
 import com.example.all4learnfragments.notes.Note;
 import com.example.all4learnfragments.notes.maper.NotesMapper;
 import com.google.android.material.textfield.TextInputEditText;
@@ -25,6 +26,7 @@ public class ActivityAddNote extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
+    SharedPref sharedPref;
 
     private static TextView dateNote;
 
@@ -32,6 +34,10 @@ public class ActivityAddNote extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        sharedPref = new SharedPref(this);
+        if (sharedPref.loadNightModeState()) {
+            setTheme(R.style.darkTheme);
+        } else setTheme(R.style.lightTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_note_activity);
 
