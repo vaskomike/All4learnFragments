@@ -26,7 +26,7 @@
 //
 //    public int onStartCommand(Intent intent, int flags, int startId) {
 //        try {
-//            TimeUnit.SECONDS.sleep(5);
+//            TimeUnit.SECONDS.sleep(0);
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
@@ -38,7 +38,7 @@
 //        // 1-я часть
 //        Notification notif = new Notification(R.drawable.progress_bar, "We are watching you" ,
 //                System.currentTimeMillis());
-
+//
 //        // 3-я часть
 //        Intent intent = new Intent(this, ConcentrationFragment.class);
 //           intent.putExtra(ConcentrationFragment.FILE_NAME, "somefile");

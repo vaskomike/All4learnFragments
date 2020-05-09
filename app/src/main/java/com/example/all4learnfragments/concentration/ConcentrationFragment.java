@@ -152,15 +152,11 @@ public class ConcentrationFragment extends Fragment {
     }
 
     private void makeText() {
-        String concentrationMotivation = getString(R.string.concentration_motivation);
-        String concentrationMotivation2 = getString(R.string.concentration_motivation_2);
-        String concentrationMotivation3 = getString(R.string.concentration_motivation_3);
-        String concentrationMotivation4 = getString(R.string.concentration_motivation_4);
-        ArrayList<String> quotes = new ArrayList<>();
-        quotes.add(1, concentrationMotivation);
-        quotes.add(2, concentrationMotivation2);
-        quotes.add(3, concentrationMotivation3);
-        quotes.add(4, concentrationMotivation4);
+        ArrayList<Integer> quotes = new ArrayList<Integer>();
+        quotes.add(R.string.concentration_motivation);
+        quotes.add(R.string.concentration_motivation_2);
+        quotes.add(R.string.concentration_motivation_3);
+        quotes.add(R.string.concentration_motivation_4);
         motivate.setText(quotes.get((int) (Math.random() * 4)));
     }
 }
