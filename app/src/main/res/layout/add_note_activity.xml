@@ -9,9 +9,9 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_edit_text"
         app:startIconContentDescription="@string/DefaultTitle"
-        app:startIconDrawable="@drawable/ic_star_silver_24dp">
+        app:startIconDrawable="@drawable/ic_star_silver_24dp"
+        android:background="?attr/card_background_color">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/title"
@@ -39,9 +39,9 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_edit_text"
         app:startIconContentDescription="@string/DefaultNote"
-        app:startIconDrawable="@drawable/ic_note_silver_24dp">
+        app:startIconDrawable="@drawable/ic_note_silver_24dp"
+        android:background="?attr/card_background_color">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text"
