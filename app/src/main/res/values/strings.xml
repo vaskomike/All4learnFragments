@@ -10,4 +10,7 @@
     <string name="theme">Theme</string>
     <string name="mode_notes">Notes</string>
     <string name="mode_concentration">Time management</string>
+    <string name="timer_stop">Stop</string>
+    <string name="timer_start">Start</string>
+    <string name="timer_end">Time\'s up</string>
 </resources>

@@ -2,9 +2,17 @@ package com.example.all4learnfragments.concentration;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.NumberPicker;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,7 +20,29 @@ import androidx.fragment.app.Fragment;
 
 import com.example.all4learnfragments.R;
 
+import java.util.ArrayList;
+import java.util.Locale;
+
 public class ConcentrationFragment extends Fragment {
+
+    private NumberPicker numberPickerHours;
+
+    private NumberPicker numberPickerMinutes;
+
+    private Button start;
+
+    private TextView timeLeft, motivate;
+
+    ProgressBar progressBar;
+
+    private ImageButton reset;
+
+    private Boolean timerIsRunning;
+
+    private CountDownTimer countDownTimer;
+
+    private long secondsToEnd;
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -27,8 +57,98 @@ public class ConcentrationFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        numberPickerHours = view.findViewById(R.id.picker_hours);
+        numberPickerMinutes = view.findViewById(R.id.picker_minutes);
+        start = (Button) view.findViewById(R.id.button);
+        motivate = (TextView) view.findViewById(R.id.motivation);
+        timeLeft = (TextView) view.findViewById(R.id.timeLeft);
+        progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        reset = (ImageButton) view.findViewById(R.id.reset);
+        timerIsRunning = false;
 
+        numberPickerHours.setMinValue(0);
+        numberPickerHours.setMaxValue(7);
+
+        numberPickerMinutes.setMinValue(0);
+        numberPickerMinutes.setMaxValue(59);
+
+        timeLeft.setText("0:00");
+
+        makeText();
+
+
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (timerIsRunning) {
+                    stopTimer();
+                } else {
+                    startTimer();
+                }
+            }
+        });
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetTimer();
+            }
+        });
+        updateTextTime();
+    }
+
+
+    public void startTimer() {
+        int hours = numberPickerHours.getValue();
+        int minutes = numberPickerMinutes.getValue();
+        int maxTime = hours * 60 * 60 * 1000 + minutes * 60 * 1000;
+
+        countDownTimer = new CountDownTimer(maxTime, 100) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                secondsToEnd = millisUntilFinished / 1000;
+                updateTextTime();
+                progressBar.setProgress((int) secondsToEnd);
+            }
+
+            @Override
+            public void onFinish() {
+                timerIsRunning = false;
+                start.setText(R.string.timer_start);
+                timeLeft.setText(R.string.timer_end);
+            }
+        }.start();
+        timerIsRunning = true;
+        start.setText(R.string.timer_stop);
+        reset.setVisibility(View.INVISIBLE);
 
     }
 
+    public void stopTimer() {
+        countDownTimer.cancel();
+        timerIsRunning = false;
+        start.setText(R.string.timer_start);
+        reset.setVisibility(View.VISIBLE);
+    }
+
+    public void resetTimer() {
+        secondsToEnd = 0;
+        updateTextTime();
+        reset.setVisibility(View.INVISIBLE);
+    }
+
+    public void updateTextTime() {
+        String left = String.format(Locale.getDefault(), "%2d", secondsToEnd / 3600) + ":" + String.format(Locale.getDefault(), "%02d", (secondsToEnd / 60) % 60);
+        timeLeft.setText(left);
+    }
+
+    private void makeText() {
+        ArrayList<String> quotes = new ArrayList<>();
+        quotes.add("Your future more valuable than this phone");
+        quotes.add("Finish it!");
+        quotes.add("Just do it!");
+        quotes.add("Why should I motivate you?");
+        motivate.setText(quotes.get((int) (Math.random() * 4)));
+    }
 }
+
+
