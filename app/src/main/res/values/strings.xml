@@ -28,6 +28,10 @@
     <string name="concentration_motivation_2">Just do it!</string>
     <string name="concentration_motivation_3">Why should I motivate you?</string>
     <string name="concentration_motivation_4">Finish it!</string>
+    <string name="concentration_motivation_5">You can!</string>
+    <string name="concentration_motivation_6">Chose right goals</string>
+    <string name="concentration_motivation_7">Have a dream, it will happen</string>
+
     <string name="timer_stop">Stop</string>
     <string name="timer_start">Start</string>
     <string name="timer_end">Time\'s up</string>

@@ -29,4 +29,7 @@
     <string name="timer_start">Начать</string>
     <string name="timer_end">Время вышло!</string>
     <string name="enter_time">Введите, пожалуйста, время</string>
+    <string name="concentration_motivation_5">Ты можешь!</string>
+    <string name="concentration_motivation_6">"Выбирай правильные цели  "</string>
+    <string name="concentration_motivation_7">Мечтай, это сбудется</string>
 </resources>

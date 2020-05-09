@@ -4,10 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground">
+    android:background="?attr/card_background_color">
 
 
     <androidx.recyclerview.widget.RecyclerView
+        android:background="?attr/card_background_color"
         android:id="@+id/recyclerNotes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="32dp"
-        android:backgroundTint="@color/colorBackground"
+        android:backgroundTint="?attr/button_color"
         android:src="@drawable/btn_add_note"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

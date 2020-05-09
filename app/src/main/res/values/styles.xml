@@ -1,6 +1,6 @@
 <resources>
 
-
+    <!--light theme-->
     <style name="AppTheme" parent="Theme.MaterialComponents">
         <item name="colorPrimary">#6200EE</item>
         <item name="colorPrimaryDark">#3700B3</item>
@@ -12,7 +12,8 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="MyAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!--light theme-->
+    <style name="lightTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@android:color/white</item>
         <item name="colorPrimaryDark">@android:color/black</item>
@@ -20,16 +21,30 @@
         <item name="colorControlNormal">#FC6E20</item>
         <item name="colorControlActivated">#FC6E20</item>
         <item name="colorControlHighlight">#FC6E20</item>
+        <item name="card_background_color">#ffffff</item>
+        <item name="background_color">#ffffff</item>
+        <item name="button_color">#ffffff</item>
+        <item name="text_color">#000000</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
     </style>
 
-    <style name="MyAppThemeDark" parent="ThemeOverlay.AppCompat.Dark">
-        <item name="colorPrimary">#03254c</item>
-        <item name="colorPrimaryDark">@android:color/black</item>
-        <item name="colorAccent">#03254c</item>
-        <item name="colorControlNormal">@android:color/holo_blue_bright</item>
-        <item name="colorControlActivated">#03254c</item>
-        <item name="colorControlHighlight">#03254c</item>
-
+    <!--dark theme-->
+    <style name="darkTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#515151</item>
+        <item name="colorPrimaryDark">#1c1c1c</item>
+        <item name="colorAccent">#FC6E20</item>
+        <item name="colorControlNormal">#FC6E20</item>
+        <item name="colorControlActivated">#FC6E20</item>
+        <item name="colorControlHighlight">#FC6E20</item>
+        <item name="card_background_color">#3f3f3f</item>
+        <item name="background_color">#333333</item>
+        <item name="button_color">#6a6a6a</item>
+        <item name="text_color">#d3d3d3</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
     </style>
 
+    <style name="WindowAnimationTransition">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
 </resources>

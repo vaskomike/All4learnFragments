@@ -9,7 +9,8 @@
     android:paddingTop="8dp"
     android:paddingEnd="8dp"
     android:paddingBottom="6dp"
-    android:id="@+id/noteItem">
+    android:id="@+id/noteItem"
+    android:backgroundTint="?attr/background_color">
 
     <TextView
         android:id="@+id/title"
@@ -20,7 +21,7 @@
         android:maxLines="3"
 
         android:textSize="16sp"
-        android:textColor="@color/color_on_background"
+        android:textColor="?attr/text_color"
 
         tools:text="@tools:sample/lorem/random" />
 
@@ -33,7 +34,7 @@
         android:maxLines="8"
         android:textSize="14sp"
         tools:text="@tools:sample/lorem/random"
-        android:textColor="@color/color_on_background" />
+        android:textColor="?attr/text_color" />
 
     <TextView
         android:id="@+id/dateItem"
@@ -41,7 +42,7 @@
         android:layout_height="wrap_content"
         android:singleLine="true"
         android:layout_gravity="end"
-        android:textColor="@color/color_secondary_text"
+        android:textColor="?attr/text_color"
         tools:text="@tools:sample/date/hhmm" />
 
 </LinearLayout>

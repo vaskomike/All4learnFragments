@@ -21,6 +21,7 @@ import androidx.fragment.app.Fragment;
 import com.example.all4learnfragments.R;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Locale;
 
 public class ConcentrationFragment extends Fragment {
@@ -46,6 +47,8 @@ public class ConcentrationFragment extends Fragment {
     private int maxTime;
 
     private Handler handler;
+
+//    private HashMap<String,Object> hashMap=new HashMap<>();
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -109,32 +112,53 @@ public class ConcentrationFragment extends Fragment {
 
 
     public void startTimer() {
-                int hours = numberPickerHours.getValue();
-                int minutes = numberPickerMinutes.getValue();
-                maxTime = hours * 60 * 60 * 1000 + minutes * 60 * 1000;
-                progressBar.setMax(maxTime);
-                if (maxTime != 0) {
-                    countDownTimer = new CountDownTimer(maxTime, 100) {
-                        @Override
-                        public void onTick(long millisUntilFinished) {
-                            secondsToEnd = millisUntilFinished / 1000;
-                            updateTextTime();
-                            progressBar.setProgress((int) (millisUntilFinished));
-                        }
 
-                        @Override
-                        public void onFinish() {
-                            timerIsRunning = false;
-                            start.setText(R.string.timer_start);
-                            timeLeft.setText(R.string.timer_end);
-                        }
-                    }.start();
-                } else
-                    Toast.makeText(getActivity(), R.string.enter_time, Toast.LENGTH_SHORT).show();
-                timerIsRunning = true;
-                start.setText(R.string.timer_stop);
-                reset.setVisibility(View.INVISIBLE);
-            }
+//        if (hashMap.isEmpty()) {
+        int hours = numberPickerHours.getValue();
+        int minutes = numberPickerMinutes.getValue();
+        maxTime = hours * 60 * 60 * 1000 + minutes * 60 * 1000;
+        progressBar.setMax(maxTime);
+        if (maxTime != 0) {
+            countDownTimer = new CountDownTimer(maxTime, 100) {
+                @Override
+                public void onTick(long millisUntilFinished) {
+                    secondsToEnd = millisUntilFinished / 1000;
+                    updateTextTime();
+                    progressBar.setProgress((int) (millisUntilFinished));
+                }
+
+                @Override
+                public void onFinish() {
+                    timerIsRunning = false;
+                    start.setText(R.string.timer_start);
+                    timeLeft.setText(R.string.timer_end);
+                }
+            }.start();
+        } else
+            Toast.makeText(getActivity(), R.string.enter_time, Toast.LENGTH_SHORT).show();
+        timerIsRunning = true;
+        start.setText(R.string.timer_stop);
+        reset.setVisibility(View.INVISIBLE);
+    }/*else {
+            progressBar.setMax((Integer) hashMap.get("maxTime"));
+            countDownTimer = new CountDownTimer((Long) hashMap.get("maxTime"), 100) {
+
+                @Override
+                public void onTick(long millisUntilFinished) {
+                    millisUntilFinished= (long) hashMap.get("secondsToEnd")*1000;
+                    updateTextTime();
+                    progressBar.setProgress((int) (millisUntilFinished));
+                }
+
+                @Override
+                public void onFinish() {
+                    timerIsRunning = false;
+                    start.setText(R.string.timer_start);
+                    timeLeft.setText(R.string.timer_end);
+                }
+            }.start();
+        }*/
+
 
 
     public void stopTimer() {
@@ -143,8 +167,8 @@ public class ConcentrationFragment extends Fragment {
         timerIsRunning = false;
         start.setText(R.string.timer_start);
         reset.setVisibility(View.VISIBLE);
-        secondsToEnd = progressBar.getProgress();
-
+//        hashMap.put("secondsToEnd",secondsToEnd);
+//        hashMap.put("maxTime",maxTime);
     }
 
     public void resetTimer() {
@@ -165,7 +189,10 @@ public class ConcentrationFragment extends Fragment {
         quotes.add(R.string.concentration_motivation_2);
         quotes.add(R.string.concentration_motivation_3);
         quotes.add(R.string.concentration_motivation_4);
-        motivate.setText(quotes.get((int) (Math.random() * 4)));
+        quotes.add(R.string.concentration_motivation_7);
+        quotes.add(R.string.concentration_motivation_6);
+        quotes.add(R.string.concentration_motivation_5);
+        motivate.setText(quotes.get((int) (Math.random() * 7)));
     }
 }
 

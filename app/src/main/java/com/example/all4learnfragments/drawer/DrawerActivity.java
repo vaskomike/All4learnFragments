@@ -24,10 +24,11 @@ import com.example.all4learnfragments.R;
 import com.example.all4learnfragments.concentration.ConcentrationFragment;
 import com.google.android.material.navigation.NavigationView;
 
+
 public class DrawerActivity extends AppCompatActivity {
     private DrawerActivityNavigator navigator = new DrawerActivityNavigator(getSupportFragmentManager());
 
-
+    SharedPref sharedPref;
     private Switch mySwitch;
 
     public static Intent createIntent(Context context) {
@@ -36,6 +37,10 @@ public class DrawerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        sharedPref = new SharedPref(this);
+        if (sharedPref.loadNightModeState() == true) {
+            setTheme(R.style.darkTheme);
+        } else setTheme(R.style.lightTheme);
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_drawer);
@@ -45,7 +50,6 @@ public class DrawerActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mySwitch = findViewById(R.id.theme);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,
@@ -78,21 +82,18 @@ public class DrawerActivity extends AppCompatActivity {
                 case R.id.theme: {
                     MenuItem menuItem = navigationView.getMenu().findItem(R.id.theme); // This is the menu item that contains your switch
                     Switch drawerSwitch = (Switch) menuItem.getActionView().findViewById(R.id.theme);
+                    if (sharedPref.loadNightModeState() == true) {
+                        drawerSwitch.setChecked(true);
+                    }
                     drawerSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                         @Override
                         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                             if (isChecked) {
-                                Toast.makeText(DrawerActivity.this, "Switch turned on", Toast.LENGTH_SHORT).show();
-                                AppCompatDelegate.setDefaultNightMode(
-                                        AppCompatDelegate.MODE_NIGHT_YES);
-                                setContentView(R.layout.activity_drawer);
-                                recreate();
+                                sharedPref.setNightModeState(true);
+                                restartApp();
                             } else {
-                                Toast.makeText(DrawerActivity.this, "Switch turned off", Toast.LENGTH_SHORT).show();
-                                AppCompatDelegate.setDefaultNightMode(
-                                        AppCompatDelegate.MODE_NIGHT_NO);
-                                recreate();
-
+                                sharedPref.setNightModeState(false);
+                                restartApp();
                             }
                         }
                     });
@@ -108,4 +109,9 @@ public class DrawerActivity extends AppCompatActivity {
         ac.setTitle(R.string.mode_notes);
     }
 
+    public void restartApp() {
+        Intent i = new Intent(getApplicationContext(), DrawerActivity.class);
+        startActivity(i);
+        finish();
+    }
 }
