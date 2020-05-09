@@ -101,13 +101,13 @@ public class ConcentrationFragment extends Fragment {
         int hours = numberPickerHours.getValue();
         int minutes = numberPickerMinutes.getValue();
         int maxTime = hours * 60 * 60 * 1000 + minutes * 60 * 1000;
-
+        progressBar.setMax(maxTime);
         countDownTimer = new CountDownTimer(maxTime, 100) {
             @Override
             public void onTick(long millisUntilFinished) {
                 secondsToEnd = millisUntilFinished / 1000;
                 updateTextTime();
-                progressBar.setProgress((int) secondsToEnd);
+                progressBar.setProgress((int) (millisUntilFinished));
             }
 
             @Override
@@ -128,6 +128,8 @@ public class ConcentrationFragment extends Fragment {
         timerIsRunning = false;
         start.setText(R.string.timer_start);
         reset.setVisibility(View.VISIBLE);
+        progressBar.getProgress();
+
     }
 
     public void resetTimer() {
