@@ -129,7 +129,6 @@ public class ConcentrationFragment extends Fragment {
                     updateTextTime();
                     progressBar.setProgress((int) (millisUntilFinished));
                 }
-
                 @Override
                 public void onFinish() {
                     timerIsRunning = false;
@@ -139,8 +138,8 @@ public class ConcentrationFragment extends Fragment {
             }.start();
         } else
             Toast.makeText(getActivity(), R.string.enter_time, Toast.LENGTH_SHORT).show();
-        timerIsRunning = false;
-        start.setText(R.string.timer_stop);
+        timerIsRunning = true;
+        start.setText(R.string.timer_start);
         reset.setVisibility(View.INVISIBLE);
     }/*else {
             progressBar.setMax((Integer) hashMap.get("maxTime"));
@@ -200,5 +199,4 @@ public class ConcentrationFragment extends Fragment {
 
     }
 }
-
 
