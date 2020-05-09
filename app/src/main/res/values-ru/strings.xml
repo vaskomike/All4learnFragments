@@ -28,4 +28,5 @@
     <string name="timer_stop">Остановить</string>
     <string name="timer_start">Начать</string>
     <string name="timer_end">Время вышло!</string>
+
 </resources>
