@@ -28,4 +28,5 @@
     <string name="timer_stop">Зупинити</string>
     <string name="timer_start">Почати</string>
     <string name="timer_end">Час вичерпано!</string>
+    <string name="enter_time">Виберіть час ,будь-ласка</string>
 </resources>

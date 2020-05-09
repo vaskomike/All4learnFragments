@@ -9,7 +9,7 @@
     <string name="drawer_open_menu">Открыть меню</string>
     <string name="drawer_close_menu">Закрыть меню</string>
     <string name="modes">Режимы</string>
-    <string name="theme">Темы</string>
+    <string name="theme">Темная тема</string>
     <string name="mode_notes">Заметки</string>
     <string name="mode_concentration">Тайм-менеджмент</string>
 
@@ -28,4 +28,5 @@
     <string name="timer_stop">Остановить</string>
     <string name="timer_start">Начать</string>
     <string name="timer_end">Время вышло!</string>
+    <string name="enter_time">Введите, пожалуйста, время</string>
 </resources>

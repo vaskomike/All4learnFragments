@@ -20,6 +20,7 @@
             <item
                 android:id="@+id/theme"
                 android:title="@string/theme"
+
                 app:actionViewClass="android.widget.Switch"
                 app:showAsAction="always"
 

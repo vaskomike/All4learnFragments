@@ -3,6 +3,7 @@ package com.example.all4learnfragments.drawer;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import android.view.MenuItem;
@@ -82,8 +83,16 @@ public class DrawerActivity extends AppCompatActivity {
                         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                             if (isChecked) {
                                 Toast.makeText(DrawerActivity.this, "Switch turned on", Toast.LENGTH_SHORT).show();
+                                AppCompatDelegate.setDefaultNightMode(
+                                        AppCompatDelegate.MODE_NIGHT_YES);
+                                setContentView(R.layout.activity_drawer);
+                                recreate();
                             } else {
                                 Toast.makeText(DrawerActivity.this, "Switch turned off", Toast.LENGTH_SHORT).show();
+                                AppCompatDelegate.setDefaultNightMode(
+                                        AppCompatDelegate.MODE_NIGHT_NO);
+                                recreate();
+
                             }
                         }
                     });
@@ -92,6 +101,7 @@ public class DrawerActivity extends AppCompatActivity {
             }
             return false;
         });
+
 
         if (savedInstanceState == null) navigator.showNotes();
         ActionBar ac = getSupportActionBar();
