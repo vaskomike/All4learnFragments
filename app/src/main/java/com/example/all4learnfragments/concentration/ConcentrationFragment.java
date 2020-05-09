@@ -79,6 +79,8 @@ public class ConcentrationFragment extends Fragment {
         numberPickerMinutes.setMinValue(0);
         numberPickerMinutes.setMaxValue(59);
 
+        numberPickerHours.setBackgroundColor(R.attr.backgroundColor);
+        numberPickerMinutes.setBackgroundColor(R.attr.backgroundColor);
         timeLeft.setText("0:00");
 
         makeText();
