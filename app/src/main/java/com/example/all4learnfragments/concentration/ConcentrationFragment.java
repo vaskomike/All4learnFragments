@@ -43,6 +43,8 @@ public class ConcentrationFragment extends Fragment {
 
     private long secondsToEnd;
 
+    private int maxTime;
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -100,7 +102,7 @@ public class ConcentrationFragment extends Fragment {
     public void startTimer() {
         int hours = numberPickerHours.getValue();
         int minutes = numberPickerMinutes.getValue();
-        int maxTime = hours * 60 * 60 * 1000 + minutes * 60 * 1000;
+        maxTime = hours * 60 * 60 * 1000 + minutes * 60 * 1000;
         progressBar.setMax(maxTime);
         countDownTimer = new CountDownTimer(maxTime, 100) {
             @Override
@@ -141,6 +143,12 @@ public class ConcentrationFragment extends Fragment {
     public void updateTextTime() {
         String left = String.format(Locale.getDefault(), "%2d", secondsToEnd / 3600) + ":" + String.format(Locale.getDefault(), "%02d", (secondsToEnd / 60) % 60);
         timeLeft.setText(left);
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putLong("millisLeft", secondsToEnd);
     }
 
     private void makeText() {
