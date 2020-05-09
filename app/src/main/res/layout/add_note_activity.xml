@@ -3,16 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:background="?attr/card_background_color"
     android:orientation="vertical">
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:startIconDrawable="@drawable/ic_star_silver_24dp"
-        app:startIconContentDescription="@string/DefaultTitle"
         android:background="@drawable/bg_edit_text"
-        >
+        app:startIconContentDescription="@string/DefaultTitle"
+        app:startIconDrawable="@drawable/ic_star_silver_24dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/title"
@@ -25,6 +24,7 @@
             android:background="@android:color/transparent"
             android:fontFamily="monospace"
             android:hint="@string/DefaultTitle"
+            android:textColor="?attr/text_color"
             android:paddingStart="6sp"
             android:paddingEnd="6sp"
             android:textSize="24sp"
@@ -39,10 +39,9 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:startIconDrawable="@drawable/ic_note_silver_24dp"
-        app:startIconContentDescription="@string/DefaultNote"
         android:background="@drawable/bg_edit_text"
-        >
+        app:startIconContentDescription="@string/DefaultNote"
+        app:startIconDrawable="@drawable/ic_note_silver_24dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text"
@@ -58,9 +57,8 @@
             android:paddingStart="6sp"
             android:paddingEnd="6sp"
 
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            />
+            android:textColor="?attr/text_color"
+            android:textSize="24sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,17 +67,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:textSize="16sp"
+        android:layout_marginEnd="16dp"
         android:text="@string/notes_last_viewed_date"
-        android:layout_marginEnd="16dp" />
+        android:textColor="?attr/text_color"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/dateNote"
         android:layout_width="120dp"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:layout_gravity="end"
+        android:layout_weight="1"
         android:padding="12dp"
+        android:textColor="?attr/text_color"
         android:textSize="16sp" />
 
 </LinearLayout>

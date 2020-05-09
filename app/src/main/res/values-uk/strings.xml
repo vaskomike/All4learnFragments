@@ -28,4 +28,8 @@
     <string name="timer_stop">Зупинити</string>
     <string name="timer_start">Почати</string>
     <string name="timer_end">Час вичерпано!</string>
+    <string name="enter_time">Виберіть час ,будь-ласка</string>
+    <string name="concentration_motivation_5">Ти в змозі!</string>
+    <string name="concentration_motivation_6">Обирай правильні цілі</string>
+    <string name="concentration_motivation_7">Мрій, це здійсниться</string>
 </resources>

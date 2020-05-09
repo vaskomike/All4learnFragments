@@ -14,9 +14,11 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?actionBarSize" />
+            android:layout_height="?actionBarSize"
+            android:background="?attr/card_background_color" />
 
         <androidx.fragment.app.FragmentContainerView
+            android:background="?attr/background_color"
             android:id="@+id/fragmentContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
@@ -32,7 +34,9 @@
             android:id="@+id/navigationView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:menu="@menu/menu_drawer" />
+            app:menu="@menu/menu_drawer"
+            android:background="?attr/card_background_color"
+            app:itemTextColor="?attr/text_color" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
