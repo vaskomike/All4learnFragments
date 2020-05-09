@@ -29,7 +29,6 @@
             android:paddingEnd="6sp"
             android:textSize="24sp"
             app:counterEnabled="true"
-            android:text="@string/DefaultTitle"
             app:counterMaxLength="5"
             app:layout_constraintTop_toTopOf="parent"
 
