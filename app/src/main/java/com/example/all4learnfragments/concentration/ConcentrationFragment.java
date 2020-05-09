@@ -139,7 +139,7 @@ public class ConcentrationFragment extends Fragment {
             }.start();
         } else
             Toast.makeText(getActivity(), R.string.enter_time, Toast.LENGTH_SHORT).show();
-        timerIsRunning = true;
+        timerIsRunning = false;
         start.setText(R.string.timer_stop);
         reset.setVisibility(View.INVISIBLE);
     }/*else {
