@@ -25,6 +25,7 @@
         <item name="background_color">#ffffff</item>
         <item name="button_color">#ffffff</item>
         <item name="text_color">#000000</item>
+        <item name="android:divider">#ffffff</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
     </style>
 
@@ -40,7 +41,13 @@
         <item name="background_color">#333333</item>
         <item name="button_color">#6a6a6a</item>
         <item name="text_color">#d3d3d3</item>
+        <item name="android:divider">#3f3f3f</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+    </style>
+
+
+    <style name="datePickerTheme" parent="@android:style/Widget.DeviceDefault.DatePicker">
+        <item name="android:divider">#3f3f3f</item>
     </style>
 
     <style name="WindowAnimationTransition">

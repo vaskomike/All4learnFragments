@@ -63,6 +63,7 @@ public class DrawerActivity extends AppCompatActivity {
 
 
         NavigationView navigationView = findViewById(R.id.navigationView);
+
         navigationView.setNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.notesVector: {
@@ -80,7 +81,8 @@ public class DrawerActivity extends AppCompatActivity {
                     break;
                 }
                 case R.id.theme: {
-                    MenuItem menuItem = navigationView.getMenu().findItem(R.id.theme); // This is the menu item that contains your switch
+                    MenuItem menuItem = navigationView.getMenu().findItem(R.id.theme);// This is the menu item that contains your switch
+                    menuItem.setEnabled(true);
                     Switch drawerSwitch = (Switch) menuItem.getActionView().findViewById(R.id.theme);
                     if (sharedPref.loadNightModeState()) {
                         drawerSwitch.setChecked(true);
