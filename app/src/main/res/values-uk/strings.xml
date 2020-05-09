@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="DefaultNote">Note</string>
-    <string name="DefaultTitle">Title</string>
+    <string name="DefaultNote">Нотатка</string>
+    <string name="DefaultTitle">Назва</string>
 
     <string name="menuNotes">Нотатки</string>
     <string name="menuConcentration">Тайм-менеджмент</string>

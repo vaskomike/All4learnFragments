@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_background"
+    android:background="@color/colorBackground"
     android:orientation="vertical">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -22,15 +22,17 @@
             android:layout_marginTop="6dp"
             android:layout_marginRight="6dp"
             android:layout_marginBottom="6dp"
-            android:background="@android:color/transparent"
+            android:background="@color/colorBackground"
             android:fontFamily="monospace"
             android:hint="@string/DefaultTitle"
             android:paddingStart="6sp"
             android:paddingEnd="6sp"
-            android:textSize="24sp"
             app:counterEnabled="true"
             app:counterMaxLength="5"
             app:layout_constraintTop_toTopOf="parent"
+
+            android:textColor="@color/color_on_background"
+            android:textSize="24sp"
 
             />
     </com.google.android.material.textfield.TextInputLayout>
@@ -51,14 +53,14 @@
             android:layout_marginLeft="6dp"
             android:layout_marginRight="6dp"
             android:layout_marginBottom="6dp"
-            android:background="@android:color/transparent"
+            android:background="@color/colorBackground"
             android:gravity="top"
             android:hint="@string/DefaultNote"
             android:inputType="textMultiLine"
             android:paddingStart="6sp"
             android:paddingEnd="6sp"
 
-            android:textColor="@android:color/black"
+            android:textColor="@color/color_on_background"
             android:textSize="24sp"
             />
 
@@ -71,7 +73,8 @@
         android:layout_gravity="end"
         android:textSize="16sp"
         android:text="@string/notes_last_viewed_date"
-        android:layout_marginEnd="16dp" />
+        android:layout_marginEnd="16dp"
+        />
 
     <TextView
         android:id="@+id/dateNote"

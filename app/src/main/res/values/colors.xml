@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
 
     <color name="underline_grey">#919191</color>
-    <color name="buttons">#FC6E20</color>
-    <color name="color_background">#ffffff</color>
-    <color name="background_splash_activity">#131210</color>
+    <color name="color_primary">#FC6E20</color>
+    <color name="colorBackground">#ffffff</color>
+    <color name="background_splash_activity">#11100D</color>
+    <color name="color_on_background">#ff000000</color>
+    <color name="color_secondary_text">#323232</color>
+    <color name="color_on_the_surface">#ffffff</color>
+
+    <color name="underline_grey_night">#919191</color>
+    <color name="color_primary_night">#FC6E20</color>
+    <color name="colorBackground_night">#121212</color>
+    <color name="background_splash_activity_night">#11100D</color>
+    <color name="color_on_background_night">#D8CECE</color>
+    <color name="color_secondary_text_night">#323232</color>
+    <color name="color_on_the_surface_night">#ffffff</color>
 
 </resources>

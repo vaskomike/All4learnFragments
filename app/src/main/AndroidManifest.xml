@@ -28,6 +28,8 @@
             android:name=".notes.base.ActivityAddNote"
             android:configChanges="uiMode" />
 
+
+
     </application>
 
 </manifest>

@@ -4,6 +4,8 @@
     <string name="DefaultNote">Note</string>
     <string name="DefaultTitle">Title</string>
 
+    <string name="no_time_is_left" translatable="false">0:00</string>
+
     <string name="menuNotes">Notes</string>
     <string name="menuConcentration">Time management</string>
     <string name="drawer_open_menu">Open menu</string>
