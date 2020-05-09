@@ -5,9 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/note_stroke"
     android:orientation="vertical"
-    android:paddingStart="6dp"
+    android:paddingStart="8dp"
     android:paddingTop="8dp"
-    android:paddingEnd="6dp"
+    android:paddingEnd="8dp"
     android:paddingBottom="6dp"
     android:id="@+id/noteItem">
 
@@ -16,9 +16,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ellipsize="end"
+        android:fontFamily="@font/brawler"
         android:maxLines="3"
+
         android:textSize="16sp"
         android:textColor="@color/color_on_background"
+
         tools:text="@tools:sample/lorem/random" />
 
     <TextView

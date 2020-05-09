@@ -27,7 +27,12 @@
         <activity
             android:name=".notes.base.ActivityAddNote"
             android:configChanges="uiMode" />
-
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+<!--        <service android:name=".concentration.NotificationService"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="true"/>-->
 
 
     </application>

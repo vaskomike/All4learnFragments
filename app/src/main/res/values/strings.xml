@@ -15,6 +15,7 @@
     <string name="mode_notes">Notes</string>
     <string name="mode_concentration">Time management</string>
 
+
     <string name="notes_last_viewed_date">Last viewed:</string>
 
     <string name="concentration_button_name_start">Start</string>
@@ -27,5 +28,9 @@
     <string name="concentration_motivation_2">Just do it!</string>
     <string name="concentration_motivation_3">Why should I motivate you?</string>
     <string name="concentration_motivation_4">Finish it!</string>
+    <string name="timer_stop">Stop</string>
+    <string name="timer_start">Start</string>
+    <string name="timer_end">Time\'s up</string>
+ master
 </resources>
 
