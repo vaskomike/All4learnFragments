@@ -38,7 +38,7 @@ public class DrawerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         sharedPref = new SharedPref(this);
-        if (sharedPref.loadNightModeState() == true) {
+        if (sharedPref.loadNightModeState()) {
             setTheme(R.style.darkTheme);
         } else setTheme(R.style.lightTheme);
         super.onCreate(savedInstanceState);
@@ -82,7 +82,7 @@ public class DrawerActivity extends AppCompatActivity {
                 case R.id.theme: {
                     MenuItem menuItem = navigationView.getMenu().findItem(R.id.theme); // This is the menu item that contains your switch
                     Switch drawerSwitch = (Switch) menuItem.getActionView().findViewById(R.id.theme);
-                    if (sharedPref.loadNightModeState() == true) {
+                    if (sharedPref.loadNightModeState()) {
                         drawerSwitch.setChecked(true);
                     }
                     drawerSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

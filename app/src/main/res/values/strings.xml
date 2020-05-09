@@ -36,5 +36,6 @@
     <string name="timer_start">Start</string>
     <string name="timer_end">Time\'s up</string>
     <string name="enter_time">Enter time, please</string>
+
 </resources>
 
