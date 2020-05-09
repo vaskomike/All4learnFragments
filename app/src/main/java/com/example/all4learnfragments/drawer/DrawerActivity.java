@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
+import android.view.MenuItem;
+import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -72,12 +74,21 @@ public class DrawerActivity extends AppCompatActivity {
                     ac.setTitle(R.string.mode_concentration);
                     break;
                 }
-                case R.id.theme:{
-                    Toast.makeText( this, "switched!", Toast.LENGTH_SHORT).show();
-//                    AppCompatDelegate.setDefaultNightMode(
-//                            AppCompatDelegate.MODE_NIGHT_YES);
+                case R.id.theme: {
+                    MenuItem menuItem = navigationView.getMenu().findItem(R.id.theme); // This is the menu item that contains your switch
+                    Switch drawerSwitch = (Switch) menuItem.getActionView().findViewById(R.id.theme);
+                    drawerSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                            if (isChecked) {
+                                Toast.makeText(DrawerActivity.this, "Switch turned on", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(DrawerActivity.this, "Switch turned off", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
                 }
-
+                break;
             }
             return false;
         });

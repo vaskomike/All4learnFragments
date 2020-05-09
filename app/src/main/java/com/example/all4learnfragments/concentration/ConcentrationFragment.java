@@ -87,7 +87,14 @@ public class ConcentrationFragment extends Fragment {
                 if (timerIsRunning) {
                     stopTimer();
                 } else {
-                    startTimer();
+                    handler = new Handler();
+                    Runnable runnable = new Runnable() {
+                        @Override
+                        public void run() {
+                            startTimer();
+                        }
+                    };
+                    handler.post(runnable);
                 }
             }
         });
