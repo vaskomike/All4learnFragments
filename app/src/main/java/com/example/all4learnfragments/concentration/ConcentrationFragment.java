@@ -77,7 +77,7 @@ public class ConcentrationFragment extends Fragment {
         numberPickerHours.setMinValue(0);
         numberPickerHours.setMaxValue(7);
 
-        numberPickerMinutes.setMinValue(0);
+        numberPickerMinutes.setMinValue(1);
         numberPickerMinutes.setMaxValue(59);
 
 
@@ -139,7 +139,7 @@ public class ConcentrationFragment extends Fragment {
         } else
             Toast.makeText(getActivity(), R.string.enter_time, Toast.LENGTH_SHORT).show();
         timerIsRunning = true;
-        start.setText(R.string.timer_start);
+        start.setText(R.string.timer_stop);
         reset.setVisibility(View.INVISIBLE);
     }/*else {
             progressBar.setMax((Integer) hashMap.get("maxTime"));

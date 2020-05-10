@@ -15,7 +15,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
-            android:background="?attr/card_background_color" />
+            android:background="?attr/button_color" />
 
         <androidx.fragment.app.FragmentContainerView
             android:background="?attr/background_color"

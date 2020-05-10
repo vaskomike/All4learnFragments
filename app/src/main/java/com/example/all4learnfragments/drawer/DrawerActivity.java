@@ -82,7 +82,7 @@ public class DrawerActivity extends AppCompatActivity {
                 }
                 case R.id.theme: {
                     MenuItem menuItem = navigationView.getMenu().findItem(R.id.theme);// This is the menu item that contains your switch
-                    menuItem.setEnabled(true);
+
                     Switch drawerSwitch = (Switch) menuItem.getActionView().findViewById(R.id.theme);
                     if (sharedPref.loadNightModeState()) {
                         drawerSwitch.setChecked(true);
