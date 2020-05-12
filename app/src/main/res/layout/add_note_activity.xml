@@ -11,6 +11,8 @@
         android:layout_height="wrap_content"
         app:startIconContentDescription="@string/DefaultTitle"
         app:startIconDrawable="@drawable/title_vector"
+        app:startIconTint="#FC6E20"
+
         android:background="?attr/card_background_color">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -41,6 +43,7 @@
         android:layout_height="wrap_content"
         app:startIconContentDescription="@string/DefaultNote"
         app:startIconDrawable="@drawable/note_vector"
+        app:startIconTint="#FC6E20"
         android:background="?attr/card_background_color">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -51,12 +54,13 @@
             android:layout_marginRight="6dp"
             android:layout_marginBottom="6dp"
             android:background="@android:color/transparent"
+            android:fontFamily="monospace"
             android:gravity="top"
             android:hint="@string/DefaultNote"
             android:inputType="textMultiLine"
             android:paddingStart="6sp"
-            android:paddingEnd="6sp"
 
+            android:paddingEnd="6sp"
             android:textColor="?attr/text_color"
             android:textSize="24sp" />
 

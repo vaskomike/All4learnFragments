@@ -36,6 +36,6 @@
     <string name="timer_start">Start</string>
     <string name="timer_end">Time\'s up</string>
     <string name="enter_time">Enter time, please</string>
-
+    <string name="notif_conc">Don\'t change mode</string>
 </resources>
 

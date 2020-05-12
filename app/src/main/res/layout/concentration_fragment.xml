@@ -9,6 +9,7 @@
 
 
     <RelativeLayout
+        android:orientation="vertical"
         android:id="@+id/relativeLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,7 +21,7 @@
         <ProgressBar
             android:id="@+id/progressBarBg"
             style="?android:progressBarStyleHorizontal"
-            android:layout_width="500dp"
+            android:layout_width="400dp"
             android:layout_height="300dp"
             android:layout_alignParentTop="true"
             android:layout_marginTop="0dp"
@@ -39,7 +40,7 @@
             style="?android:progressBarStyleHorizontal"
             android:contextClickable="false"
             android:theme="?attr/text_color"
-            android:layout_width="500dp"
+            android:layout_width="400dp"
             android:layout_height="300dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
@@ -128,6 +129,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:solidColor="?attr/number_picker"
+        android:theme="@style/time_picker"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout2" />
@@ -138,11 +140,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:solidColor="?attr/number_picker"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/picker_hours"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout2"
-        app:layout_constraintVertical_bias="0.501" />
+        app:layout_constraintVertical_bias="0.501"
+        android:theme="@style/time_picker" />
 
     <TextView
         android:id="@+id/motivation"

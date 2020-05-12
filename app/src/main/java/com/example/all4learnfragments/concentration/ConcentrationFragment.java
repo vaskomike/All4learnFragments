@@ -1,7 +1,10 @@
 package com.example.all4learnfragments.concentration;
 
+import android.app.NotificationManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -17,6 +20,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import com.example.all4learnfragments.R;
@@ -49,6 +53,7 @@ public class ConcentrationFragment extends Fragment {
 
     private Handler handler;
 
+
 //    private HashMap<String,Object> hashMap=new HashMap<>();
 
     @Override
@@ -60,11 +65,12 @@ public class ConcentrationFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.concentration_fragment, container, false);
-
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        Toast.makeText(getActivity(), R.string.notif_conc, Toast.LENGTH_LONG).show();
         numberPickerHours = view.findViewById(R.id.picker_hours);
         numberPickerMinutes = view.findViewById(R.id.picker_minutes);
         start = (Button) view.findViewById(R.id.button);
@@ -83,6 +89,12 @@ public class ConcentrationFragment extends Fragment {
 
         timeLeft.setText("0:00");
 
+        NotificationManager mNotificationManager = (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+
+        if (!mNotificationManager.isNotificationPolicyAccessGranted()) {
+            Intent intent = new Intent(android.provider.Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS);
+            startActivity(intent);
+        }
 
         makeText();
 
@@ -92,12 +104,14 @@ public class ConcentrationFragment extends Fragment {
             public void onClick(View v) {
                 if (timerIsRunning) {
                     stopTimer();
+                    mNotificationManager.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALL);
                 } else {
                     handler = new Handler();
                     Runnable runnable = new Runnable() {
                         @Override
                         public void run() {
                             startTimer();
+                            mNotificationManager.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALARMS);
                         }
                     };
                     handler.post(runnable);
@@ -108,13 +122,21 @@ public class ConcentrationFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 resetTimer();
+                mNotificationManager.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALL);
             }
         });
         updateTextTime();
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public void startTimer() {
+        NotificationManager mNotificationManager = (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+
+        if (!mNotificationManager.isNotificationPolicyAccessGranted()) {
+            Intent intent = new Intent(android.provider.Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS);
+            startActivity(intent);
+        }
 
 //        if (hashMap.isEmpty()) {
         int hours = numberPickerHours.getValue();
@@ -129,9 +151,12 @@ public class ConcentrationFragment extends Fragment {
                     updateTextTime();
                     progressBar.setProgress((int) (millisUntilFinished));
                 }
+
                 @Override
                 public void onFinish() {
                     timerIsRunning = false;
+                    mNotificationManager.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALL);
+
                     start.setText(R.string.timer_start);
                     timeLeft.setText(R.string.timer_end);
                 }
@@ -177,6 +202,7 @@ public class ConcentrationFragment extends Fragment {
         secondsToEnd = 0;
         updateTextTime();
         reset.setVisibility(View.INVISIBLE);
+
     }
 
     public void updateTextTime() {
